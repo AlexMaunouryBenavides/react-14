@@ -1,0 +1,20 @@
+header {
+	background-color: whitesmoke;
+}
+.header {
+	display: flex;
+	justify-content: space-between;
+	padding: 30px 100px;
+	color: #111;
+}
+.logo {
+	font-size: 32px;
+	font-weight: bold;
+}
+.title {
+	font-size: 24px;
+}
+.link a {
+	text-decoration: none;
+	font-size: 24px;
+}
