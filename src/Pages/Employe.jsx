@@ -68,7 +68,7 @@ export default function CustomPaginationActionsTable() {
 		setPage(0);
 	};
 
-	const datasAfterPagingAndSorting = stableSort(datas, getComparator(order, orderBy)).slice(page * rowsPerPage, (page + 1.5) * rowsPerPage);
+	const datasAfterPagingAndSorting = stableSort(datas, getComparator(order, orderBy)).slice(page * rowsPerPage, (page + 1) * rowsPerPage);
 
 	//sorting
 

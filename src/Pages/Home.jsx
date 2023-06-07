@@ -1,7 +1,9 @@
 import { Box, TextField, MenuItem, Select, InputLabel } from '@mui/material';
 import Header from '../Components/Header/Header';
 import { Link } from 'react-router-dom';
-import { Modal } from 'modal-noobie';
+import Modal from 'modal-noobie/dist/index';
+import 'modal-noobie/dist/index.css';
+
 /* import Modal from '../Components/modal/Modal'; */
 
 import { useEffect, useState } from 'react';
