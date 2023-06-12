@@ -1,20 +1,10 @@
-import { Box, TextField, MenuItem, Select, InputLabel } from '@mui/material';
+import { TextField, MenuItem, Select } from '@mui/material';
 import Header from '../Components/Header/Header';
 import { Link } from 'react-router-dom';
 import Modal from 'modal-noobie/dist/index';
 import 'modal-noobie/dist/index.css';
-
-/* import Modal from '../Components/modal/Modal'; */
-
-import { useEffect, useState } from 'react';
-
-/* 
-import Styles from './modal.module.css';
-className={Styles.openBtn}
-className={Styles.modal}
-className={Styles.overlay}
-className={Styles.content}
-className={Styles.closeBtn} */
+import { useContext, useState } from 'react';
+import { UserContext } from '../Components/userContext';
 
 const states = [
 	{
@@ -260,7 +250,8 @@ function Home() {
 	const [dateOfBirth, setDateOfBirth] = useState('');
 	const [startDate, setStartDate] = useState('');
 	const [datas, setDatas] = useState(JSON.parse(localStorage.getItem('data') || '[]'));
-
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const { saveNewEmployee } = useContext(UserContext);
 	//input change from value
 	const handleChange = (e) => {
 		const name = e.target.name;
@@ -277,8 +268,9 @@ function Home() {
 			startDate,
 		};
 		setDatas([...datas, data]);
-		localStorage.setItem('data', JSON.stringify([...datas, data]));
+		saveNewEmployee(data);
 		setInputs({ firstName: '', lastName: '', street: '', city: '', zipCode: '', department: '' });
+		setIsModalOpen(true);
 		setDateOfBirth('');
 		setStartDate('');
 	};
@@ -400,11 +392,17 @@ function Home() {
 						<MenuItem value={'Human Resource'}>Human Resources</MenuItem>
 						<MenuItem value={'Legal'}>Legal</MenuItem>
 					</Select>
+					<button
+						type="submit"
+						className="openBtn">
+						Open
+					</button>
 
 					<Modal
-						open="Send"
-						close="x"
-					/>
+						open={isModalOpen}
+						onClose={() => setIsModalOpen(false)}>
+						<p className="content">Employee Created! </p>
+					</Modal>
 				</div>
 			</form>
 		</>

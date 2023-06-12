@@ -7025,10 +7025,10 @@ mkdirp@^0.5.0, mkdirp@~0.5.1:
   dependencies:
     minimist "^1.2.6"
 
-modal-noobie@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.npmjs.org/modal-noobie/-/modal-noobie-0.1.2.tgz"
-  integrity sha512-UHdIU/tWAtxOIzkvCs+0crEQtnACjB3ldZ2LNIe72u1OeXvGoKNYLfuPX8F7CkR3O+4oIhXauYnBvgUg9GdbOw==
+modal-noobie@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.npmjs.org/modal-noobie/-/modal-noobie-0.1.3.tgz"
+  integrity sha512-RdbrSK9GL1zcfNQRoII2fbD3XUCRs/s4/ODCe2vC2AKIfS+4b0Vn+qjI/GViJa2qW5KPnM3swQJHcwbjwzfA9w==
   dependencies:
     "@testing-library/jest-dom" "^5.16.5"
     "@testing-library/react" "^13.4.0"

@@ -10,9 +10,11 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import TablePagination from '@mui/material/TablePagination';
 import { TableFooter, TableSortLabel } from '@mui/material';
+import { useContext } from 'react';
+import { UserContext } from '../Components/userContext';
 
 export default function CustomPaginationActionsTable() {
-	const [datas, setDatas] = useState(JSON.parse(localStorage.getItem('data') || '[]'));
+	const { storage } = useContext(UserContext);
 	const pages = [5, 10, 25, 50, 100];
 	const [page, setPage] = useState(0);
 	const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -68,7 +70,7 @@ export default function CustomPaginationActionsTable() {
 		setPage(0);
 	};
 
-	const datasAfterPagingAndSorting = stableSort(datas, getComparator(order, orderBy)).slice(page * rowsPerPage, (page + 1) * rowsPerPage);
+	const datasAfterPagingAndSorting = stableSort(storage, getComparator(order, orderBy)).slice(page * rowsPerPage, (page + 1) * rowsPerPage);
 
 	//sorting
 
@@ -177,7 +179,7 @@ export default function CustomPaginationActionsTable() {
 							<TableRow>
 								<TablePagination
 									rowsPerPageOptions={pages}
-									count={datas.length}
+									count={storage.length}
 									rowsPerPage={rowsPerPage}
 									page={page}
 									onPageChange={handleChangePage}

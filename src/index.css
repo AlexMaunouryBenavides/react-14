@@ -103,3 +103,35 @@ body {
 .table_search:focus {
 	box-shadow: 1px 1px 5px green;
 }
+.overlay {
+	height: 100vh;
+	width: 100%;
+	background-color: rgba(49, 49, 49, 0.8);
+}
+.content {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	line-height: 1.4;
+	background: #f1f1f1;
+	padding: 14px 28px;
+	border-radius: 3px;
+	max-width: 600px;
+	min-width: 300px;
+	z-index: 10;
+}
+.closeBtn {
+	font-size: 1.3rem;
+	padding: 15px 20px;
+	border-radius: 30px;
+	background: #000;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: 40%;
+	left: 58%;
+	transform: translate(-50%, -50%);
+	z-index: 20;
+}
