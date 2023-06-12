@@ -4,7 +4,7 @@ import Home from './Pages/Home';
 import Employe from './Pages/Employe';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Error from './Pages/Error';
-import { UserContext, UserProvider } from './Components/userContext';
+import { UserProvider } from './Components/userContext';
 
 
 
